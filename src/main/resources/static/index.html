@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="page">
+    <header class="topbar">
+        <div>
+            <div class="eyebrow">APPLICATION DASHBOARD</div>
+            <h1>Spring Boot Maven</h1>
+            <p>Simple production-style dashboard for your server deployment.</p>
+        </div>
+        <div class="badge"><span class="dot"></span> SYSTEM UP</div>
+    </header>
+
+    <main>
+        <section class="cards">
+            <div class="card">
+                <div class="label">Environment</div>
+                <div class="value" id="environment">-</div>
+                <div class="sub">Deployment environment</div>
+            </div>
+            <div class="card">
+                <div class="label">Version</div>
+                <div class="value" id="version">-</div>
+                <div class="sub">Current application version</div>
+            </div>
+            <div class="card">
+                <div class="label">Services</div>
+                <div class="value" id="serviceCount">-</div>
+                <div class="sub">Registered services</div>
+            </div>
+            <div class="card">
+                <div class="label">API Status</div>
+                <div class="value success" id="status">-</div>
+                <div class="sub">Backend health</div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-heading">
+                <div>
+                    <h2>Service Status</h2>
+                    <p>Live data returned by the Spring Boot REST API.</p>
+                </div>
+                <button onclick="loadDashboard()">Refresh</button>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Status</th>
+                        <th>Version</th>
+                        <th>Uptime</th>
+                    </tr>
+                    </thead>
+                    <tbody id="serviceTable">
+                    <tr><td colspan="4" class="loading">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="api-panel">
+            <div>
+                <span class="method">GET</span>
+                <strong>/api/dashboard</strong>
+            </div>
+            <a href="/api/dashboard" target="_blank">Open API →</a>
+        </section>
+    </main>
+
+    <footer>
+        Spring Boot + Maven &nbsp;•&nbsp; Java 17 &nbsp;•&nbsp; Server port 8080
+    </footer>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>
