@@ -1,0 +1,5 @@
+com/example/ServerMonitorApplication.class
+com/example/controller/DashboardController.class
+com/example/dashboard/SpringbootMavenDashboardApplication.class
+com/example/dashboard/controller/DashboardController.class
+com/example/dashboard/model/ServiceStatus.class
